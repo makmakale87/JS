@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #7b86aa;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-gap: 1rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(91, 103, 162, 0.5),
+    -10px -10px 15px rgba(191, 200, 234, 0.5);
+}
+
+.grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: inset -10px -10px 15px rgba(91, 103, 162, 0.5),
+    inset 10px 10px 15px rgba(191, 200, 234, 0.5);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.grid > button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset -5px -5px 10px rgba(91, 103, 162, 0.5),
+    inset 5px 5px 10px rgba(191, 200, 234, 0.5);
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1/-1;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    box-shadow: inset 10px 10px 15px rgba(91, 103, 162, 0.5),
+    inset -10px -10px 15px rgba(191, 200, 234, 0.5);
+    border-radius: 10px;
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+}
